@@ -1,0 +1,20 @@
+name: C++ Build CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install compiler
+        run: sudo apt-get update && sudo apt-get install -y g++
+
+      - name: Build project
+        run: g++ array.cpp bst.cpp linkedlist.cpp main.cpp queue.cpp stack.cpp -o toolkit.exe
