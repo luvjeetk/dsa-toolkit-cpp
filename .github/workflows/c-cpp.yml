@@ -17,4 +17,4 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y g++
 
       - name: Build project
-        run: g++ array.cpp bst.cpp linkedlist.cpp main.cpp queue.cpp stack.cpp -o toolkit.exe
+        run: g++ src/array.cpp src/bst.cpp src/linkedlist.cpp src/main.cpp src/queue.cpp src/stack.cpp -o toolkit.exe
