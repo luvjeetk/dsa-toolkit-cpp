@@ -57,18 +57,38 @@ public:
         inorderRec(root);
         std::cout << std::endl;
     }
+
+    void menu() {
+        int choice, value;
+
+        do {
+            std::cout << "\n--- BST Menu ---\n";
+            std::cout << "1. Insert\n";
+            std::cout << "2. Inorder Traversal\n";
+            std::cout << "0. Back to Main Menu\n";
+            std::cout << "Enter choice: ";
+            std::cin >> choice;
+
+            switch (choice) {
+                case 1:
+                    std::cout << "Enter value to insert: ";
+                    std::cin >> value;
+                    insert(value);
+                    break;
+                case 2:
+                    inorder();
+                    break;
+                case 0:
+                    std::cout << "Returning to main menu...\n";
+                    break;
+                default:
+                    std::cout << "Invalid choice!\n";
+            }
+        } while (choice != 0);
+    }
 };
 
 void runBstModule() {
-    std::cout << "BST Demo" << std::endl;
     BST tree;
-    tree.insert(50);
-    tree.insert(30);
-    tree.insert(20);
-    tree.insert(40);
-    tree.insert(70);
-    tree.insert(60);
-    tree.insert(80);
-
-    tree.inorder();
+    tree.menu();
 }
